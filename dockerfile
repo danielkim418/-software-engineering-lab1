@@ -1,11 +1,8 @@
-# Use an official Nginx image as the base
+# Use a lightweight web server image (e.g., nginx)
 FROM nginx:alpine
 
-# Copy the HTML file to the default Nginx HTML directory
+# Copy your HTML file to the nginx web server directory
 COPY food.html /usr/share/nginx/html/index.html
 
-# Expose port 80 for the web server
+# Expose port 80 to access the web server
 EXPOSE 80
-
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
